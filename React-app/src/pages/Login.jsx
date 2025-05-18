@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
-const Contact = () => {
-  const [users, setUsers] = useState([]);
+export const Login = () => {
+  const [users, setUsers] = useState({});
 
   const [formUser, setFormUser] = useState({
-    firstName: "",
     email: "",
     phone: "",
-    message: "",
+    password: "",
   });
 
   // const [firstName, setFirstName] = useState("");
@@ -65,23 +65,10 @@ const Contact = () => {
       <div className="py-[100px] px-5 lg:px-[200px]">
         <div className="p-5 lg:p-10 card">
           <h1 className="text-[25px] lg:text-[40px] font-bold text-center font-mono">
-            Contact Us Now❗
+            Login
           </h1>
           <form onSubmit={handleClick} action="">
             <div className="mt-8 flex flex-col justify-between space-y-4">
-              <div className="w-[90%] flex flex-col">
-                <label htmlFor="" className="text-[18px] lg:text-[25px]">
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  name="firstName"
-                  value={formUser.firstName}
-                  onChange={handleInput}
-                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
-                  placeholder="Enter First Name"
-                />
-              </div>
               <div className="w-[90%] flex flex-col">
                 <label htmlFor="" className="text-[18px] lg:text-[25px]">
                   Email
@@ -97,29 +84,23 @@ const Contact = () => {
               </div>
               <div className="w-[90%] flex flex-col">
                 <label htmlFor="" className="text-[18px] lg:text-[25px]">
-                  Phone
+                  Password
                 </label>
                 <input
-                  type="number"
-                  name="phone"
-                  value={formUser.phone}
+                  type="text"
+                  name="firstName"
+                  value={formUser.password}
                   onChange={handleInput}
                   className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
-                  placeholder="Enter Phone"
+                  placeholder="Enter Password"
                 />
               </div>
-              <div className="flex flex-col">
-                <label htmlFor="" className="text-[18px] lg:text-[25px]">
-                  Message(feedback)
-                </label>
-                <textarea
-                  type="text"
-                  name="message"
-                  value={formUser.message}
-                  onChange={handleInput}
-                  className="w-[90%] h-[100px] py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
-                  placeholder="Message.."
-                />
+
+              <div className="mt-5 px-5 flex justify-between">
+                <h1>Forgot password?</h1>
+                <Link to="/SignUp">
+                  <h1>Sign Up</h1>
+                </Link>
               </div>
             </div>
 
@@ -136,5 +117,3 @@ const Contact = () => {
     </div>
   );
 };
-
-export default Contact;

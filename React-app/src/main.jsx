@@ -11,6 +11,8 @@ import Vehicles from "./pages/Vehicles.jsx";
 import Services from "./pages/Services.jsx";
 import Contact from "./pages/Contact.jsx";
 import { Landing } from "./pages/Landing.jsx";
+import { SignUp } from "./pages/SignUp.jsx";
+import { Login } from "./pages/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
   {
     path: "/Contact",
     element: <Contact />,
+  },
+  {
+    path: "/Login",
+    element: <Login />,
+  },
+  {
+    path: "/SignUp",
+    element: <SignUp />,
   },
 ]);
 

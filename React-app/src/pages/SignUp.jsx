@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
-const Contact = () => {
-  const [users, setUsers] = useState([]);
+export const SignUp = () => {
+  const [users, setUsers] = useState({});
 
   const [formUser, setFormUser] = useState({
     firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     message: "",
@@ -65,7 +67,7 @@ const Contact = () => {
       <div className="py-[100px] px-5 lg:px-[200px]">
         <div className="p-5 lg:p-10 card">
           <h1 className="text-[25px] lg:text-[40px] font-bold text-center font-mono">
-            Contact Us Now❗
+            Sign up
           </h1>
           <form onSubmit={handleClick} action="">
             <div className="mt-8 flex flex-col justify-between space-y-4">
@@ -80,6 +82,19 @@ const Contact = () => {
                   onChange={handleInput}
                   className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
                   placeholder="Enter First Name"
+                />
+              </div>
+              <div className="w-[90%] flex flex-col">
+                <label htmlFor="" className="text-[18px] lg:text-[25px]">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formUser.lastName}
+                  onChange={handleInput}
+                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
+                  placeholder="Enter Last Name"
                 />
               </div>
               <div className="w-[90%] flex flex-col">
@@ -108,7 +123,7 @@ const Contact = () => {
                   placeholder="Enter Phone"
                 />
               </div>
-              <div className="flex flex-col">
+              <div className="w-[90%] flex flex-col">
                 <label htmlFor="" className="text-[18px] lg:text-[25px]">
                   Message(feedback)
                 </label>
@@ -117,10 +132,17 @@ const Contact = () => {
                   name="message"
                   value={formUser.message}
                   onChange={handleInput}
-                  className="w-[90%] h-[100px] py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
+                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
                   placeholder="Message.."
                 />
               </div>
+            </div>
+
+            <div className="mt-5 px-5 flex justify-between">
+              <h1>Forgot password?</h1>
+              <Link to="/Login">
+                <h1>Login</h1>
+              </Link>
             </div>
 
             <div className="mt-5 lg:mt-10">
@@ -136,5 +158,3 @@ const Contact = () => {
     </div>
   );
 };
-
-export default Contact;
