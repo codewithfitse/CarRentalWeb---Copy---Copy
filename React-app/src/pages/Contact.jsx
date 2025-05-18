@@ -59,18 +59,18 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="w-full h-[100%] background text-amber-50">
+    <div className="w-full h-[100%] background text-amber-50 overflow-x-hidden">
       <Header />
 
-      <div className="py-[100px] px-[200px]">
-        <div className="p-10 card">
-          <h1 className="text-[40px] font-bold text-center font-mono">
+      <div className="py-[100px] px-5 lg:px-[200px]">
+        <div className="p-5 lg:p-10 card">
+          <h1 className="text-[25px] lg:text-[40px] font-bold text-center font-mono">
             Contact Us Now❗
           </h1>
           <form onSubmit={handleClick} action="">
             <div className="mt-8 flex flex-col justify-between space-y-4">
               <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px]">
+                <label htmlFor="" className="text-[18px] lg:text-[25px]">
                   First Name
                 </label>
                 <input
@@ -78,12 +78,12 @@ const Contact = () => {
                   name="firstName"
                   value={formUser.firstName}
                   onChange={handleInput}
-                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:"
+                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
                   placeholder="Enter First Name"
                 />
               </div>
               <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px]">
+                <label htmlFor="" className="text-[18px] lg:text-[25px]">
                   Email
                 </label>
                 <input
@@ -91,12 +91,12 @@ const Contact = () => {
                   name="email"
                   value={formUser.email}
                   onChange={handleInput}
-                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:"
+                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
                   placeholder="Enter Email"
                 />
               </div>
               <div className="w-[45%] flex flex-col">
-                <label htmlFor="" className="text-[25px]">
+                <label htmlFor="" className="text-[18px] lg:text-[25px]">
                   Phone
                 </label>
                 <input
@@ -104,12 +104,12 @@ const Contact = () => {
                   name="phone"
                   value={formUser.phone}
                   onChange={handleInput}
-                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:"
+                  className="py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
                   placeholder="Enter Phone"
                 />
               </div>
               <div className="flex flex-col">
-                <label htmlFor="" className="text-[25px]">
+                <label htmlFor="" className="text-[18px] lg:text-[25px]">
                   Message(feedback)
                 </label>
                 <textarea
@@ -117,7 +117,7 @@ const Contact = () => {
                   name="message"
                   value={formUser.message}
                   onChange={handleInput}
-                  className="w-[80%] h-[100px] py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:"
+                  className="w-[80%] h-[100px] py-2 px-3 text-2xl font-bold bg-amber-400 placeholder:text-[20px]"
                   placeholder="Message.."
                 />
               </div>
