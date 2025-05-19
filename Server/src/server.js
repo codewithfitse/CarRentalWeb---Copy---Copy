@@ -24,7 +24,7 @@ mongoose
   .catch((err) => console.log(`Err:`, err));
 
 app.get("/", (req, res) => {
-  res.status(200).send("HomePage");
+  res.status(200).json("HomePage");
   console.log(`We are on Homepage`);
 });
 
