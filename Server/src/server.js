@@ -6,7 +6,13 @@ import UserContact from "../models/usersContact.js";
 import UserBook from "../models/userBook.js";
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: [],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 const PORT = 3000;
 
